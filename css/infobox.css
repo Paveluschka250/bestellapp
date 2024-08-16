@@ -1,0 +1,78 @@
+/* Overlay-Stil */
+.overlay {
+    display: none; /* Das Overlay ist standardmäßig ausgeblendet */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+    z-index: 1000; /* Sicherstellen, dass das Overlay vor allem anderen liegt */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Zusätzlicher Abstand für kleine Bildschirme */
+  }
+  
+  /* Infobox-Stil */
+  .infobox {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Leichter Schatten für Tiefe */
+    font-family: 'Raleway', sans-serif; /* Angenehme, moderne Schrift */
+  }
+  
+  /* Infobox Überschriften */
+  .infobox h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .infobox h3 {
+    color: #007bff;
+    margin: 0 0 5px 0;
+    font-size: 18px;
+  }
+  
+  /* Infobox Inhalt */
+  .infobox p {
+    margin: 0;
+    color: #555;
+  }
+  
+  /* Abschnitts-Stil */
+  .infobox-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .infobox-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+  
+  /* Schließen-Button */
+  .close-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .close-button:hover {
+    background-color: #0056b3;
+  }
+  

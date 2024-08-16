@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/button.css" />
+    <link rel="stylesheet" href="./css/infobox.css">
+    <link rel="stylesheet" href="./css/reviews.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,6 +21,7 @@
     <script src="./script.js"></script>
     <script src="./script/info.js"></script>
     <script src="./script/like.js"></script>
+    <script src="./script/reviews.js"></script>
   </head>
   <body onload="render()">
     <header>
@@ -36,7 +39,7 @@
             <div class="title">
               <h1>Sushi Restaurant</h1>
               <div class="title-infolike">
-                <button class="infobutton">
+                <button class="infobutton" onclick="openOverlayInfo()">
                   <img src="./assets/icons/info-icon.svg" alt="Info" /><b
                     >Über uns</b
                   >
@@ -50,6 +53,11 @@
                 </button>
               </div>
             </div>
+            <!-- _________________________________________________ -->
+             <div class="reviews">
+              <img src="./assets/icons/star.svg" alt="Bewertung">
+              <a onclick="openOverlayReviews()"><b>4.6</b> (200+)</a> 
+             </div>
           </div>
 
           <div id="content"></div>
@@ -77,5 +85,65 @@
       </div>
       <p>© 2024 Lieferapp</p>
     </footer>
+
+    <!-- Overlay für die Informationen -->
+    <div id="overlay" class="overlay" onclick="closeOverlay()">
+      <div class="infobox" onclick="event.stopPropagation()">
+        <h2>Über uns</h2>
+        
+        <!-- Öffnungszeiten -->
+        <div class="infobox-section">
+          <img src="./assets/icons/clock-icon.svg" alt="Öffnungszeiten" class="infobox-icon" />
+          <div>
+            <h3>Öffnungszeiten</h3>
+            <p>Montag - Freitag: 10:00 - 22:00</p>
+            <p>Samstag - Sonntag: 12:00 - 24:00</p>
+          </div>
+        </div>
+
+        <!-- Lieferzeiten -->
+        <div class="infobox-section">
+          <img src="./assets/icons/delivery-icon.svg" alt="Lieferzeiten" class="infobox-icon" />
+          <div>
+            <h3>Lieferzeiten</h3>
+            <p>Montag - Freitag: 11:00 - 21:00</p>
+            <p>Samstag - Sonntag: 12:00 - 23:00</p>
+          </div>
+        </div>
+
+        <!-- Mindestbestellwert -->
+        <div class="infobox-section">
+          <img src="./assets/icons/euro-icon.svg" alt="Mindestbestellwert" class="infobox-icon" />
+          <div>
+            <h3>Mindestbestellwert</h3>
+            <p>10,00 €</p>
+          </div>
+        </div>
+
+        <!-- Bezahlmöglichkeiten -->
+        <div class="infobox-section">
+          <img src="./assets/icons/payment-icon.svg" alt="Bezahlmöglichkeiten" class="infobox-icon" />
+          <div>
+            <h3>Bezahlmöglichkeiten</h3>
+            <p>Barzahlung, Kreditkarte, PayPal</p>
+          </div>
+        </div>
+
+        <button class="close-button" onclick="closeOverlay()">Schließen</button>
+      </div>
+    </div>
+
+    <!-- Overlay für Bewertungen -->
+    <div id="review-overlay" class="overlay" onclick="closeReviewOverlay()">
+      <div class="infobox" onclick="event.stopPropagation()">
+        <h2>Bewertungen</h2>
+        
+        <!-- Bewertungen Liste -->
+        <div id="review-list"></div>
+
+        <button class="close-button" onclick="closeReviewOverlay()">Schließen</button>
+      </div>
+    </div>
+
   </body>
 </html>
