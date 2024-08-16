@@ -37,7 +37,7 @@ const reviews = [
     });
   
     // Overlay anzeigen
-    document.getElementById("review-overlay").style.display = "block";
+    document.getElementById("review-overlay").style.display = "flex";
   }
   
   // Overlay schließen
