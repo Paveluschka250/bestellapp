@@ -1,13 +1,81 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lieferando</title>
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LieferApp</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./assets/icons/favicon.ico" />
+    <link rel="stylesheet" href="./css/standart.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/button.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="./script.js"></script>
-</head>
-<body onload="render()">
-    <div id="content"></div>
-</body>
+    <script src="./script/info.js"></script>
+    <script src="./script/like.js"></script>
+  </head>
+  <body onload="render()">
+    <header>
+      <img src="./assets/icons/Bestell App- Logo.svg" alt="Logo" />
+    </header>
+    <!-- ___________________________________________________________________________________________ -->
+    <main>
+      <section class="main">
+        <div class="homescreen">
+          <img src="./assets/img/sushi-logo.jpg" alt="Sushilogo" />
+        </div>
+
+        <div class="menu">
+          <div>
+            <div class="title">
+              <h1>Sushi Restaurant</h1>
+              <div class="title-infolike">
+                <button class="infobutton">
+                  <img src="./assets/icons/info-icon.svg" alt="Info" /><b
+                    >Über uns</b
+                  >
+                </button>
+                <button class="likebutton" onclick="toggleLike()">
+                  <img
+                    id="like-icon"
+                    src="./assets/icons/like-false.svg"
+                    alt="Like"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="content"></div>
+        </div>
+      </section>
+      <!-- __________________________________________ -->
+      <section class="sidebar">
+        <div class="sidebar-basket">
+          <h1>Warenkorb</h1>
+        </div>
+      </section>
+    </main>
+    <!-- __________________________________________________________________________________________ -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Ein Restaurant empfehlen</a>
+        <a href="#">Ein Restaurant anmelden</a>
+        <a href="#">Jobs</a>
+        <a href="#">AGB</a>
+        <a href="#">Datenschutzerklärung</a>
+        <a href="#">Impressum</a>
+        <a href="#">Verwendung von Cookies</a>
+        <a href="#">Bug Bounty</a>
+        <a href="#">Ethik-Hotline</a>
+      </div>
+      <p>© 2024 Lieferapp</p>
+    </footer>
+  </body>
 </html>

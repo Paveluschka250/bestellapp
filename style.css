@@ -1,0 +1,59 @@
+main {
+  gap: 2px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.main {
+  width: calc(100% - 308px);
+}
+.homescreen {
+  background: url(./assets/img/sushi-homescreen.jpg) no-repeat center/cover;
+  height: 500px;
+}
+.homescreen img {
+  width: 100px;
+  position: relative;
+  top: 380px;
+  left: 200px;
+  border: 2px #000000 solid;
+  border-radius: 8px;
+}
+.menu {
+  margin: 0px 200px;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+}   
+.title-infolike {
+  display: flex;
+}
+.title-infolike button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.title-infolike img {
+    height: 32px;
+}
+.infobutton {
+    background-color: rgb(239, 237, 234);
+    margin: 8px;
+    border-radius: 24px;
+}
+.likebutton {
+    background-color: rgb(239, 237, 234);
+    margin: 8px;
+    border-radius: 24px;
+}
+.sidebar {
+  width: 300px;
+  flex-grow: 1;
+  padding: 16px;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+}
+.sidebar-basket {
+  position: sticky;
+  top: 0;
+}
