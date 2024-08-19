@@ -37,18 +37,24 @@ main {
 .title-infolike img {
     height: 32px;
 }
-.infobutton {
-    background-color: rgb(239, 237, 234);
-    margin: 8px;
-    border-radius: 24px;
+.infobutton, .likebutton {
+  background-color: rgb(239, 237, 234);
+  margin: 8px;
+  border-radius: 24px;
+  padding: 12px 24px; /* Optional: Fügt etwas Innenabstand hinzu */
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-radius 0.3s ease;
 }
-.likebutton {
-    background-color: rgb(239, 237, 234);
-    margin: 8px;
-    border-radius: 24px;
+
+.infobutton:hover, .likebutton:hover {
+  background-color: #f36805;
+  border-radius: 32px;
+  transform: scale(1.1);
 }
 .reviews {
   display: flex;
+  gap: 16px;
 }
 .reviews img {
   width: 20px;
@@ -59,13 +65,23 @@ main {
 .reviews a:hover {
   text-decoration: underline;
 }
-.sidebar {
-  width: 300px;
-  flex-grow: 1;
-  padding: 16px;
-  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+nav{
+  margin: 24px 0;
+  display: flex;
+  gap: 16px;
 }
-.sidebar-basket {
-  position: sticky;
-  top: 0;
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 16px;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 32px;
+  transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+nav a:hover {
+  background-color: #f36805; 
+  border-radius: 32px;
+  transform: scale(1.1);
 }

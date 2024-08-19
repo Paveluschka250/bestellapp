@@ -10,20 +10,22 @@
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/button.css" />
-    <link rel="stylesheet" href="./css/infobox.css">
-    <link rel="stylesheet" href="./css/reviews.css">
+    <link rel="stylesheet" href="./css/infobox.css" />
+    <link rel="stylesheet" href="./css/reviews.css" />
+    <link rel="stylesheet" href="./css/sidebare.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="./script.js"></script>
+    <script src="./script/main.js"></script>
     <script src="./script/info.js"></script>
     <script src="./script/like.js"></script>
     <script src="./script/reviews.js"></script>
+    <script src="./script/data.js"></script>
   </head>
-  <body onload="render()">
+  <body onload="renderAll()">
     <header>
       <img src="./assets/icons/Bestell App- Logo.svg" alt="Logo" />
     </header>
@@ -54,13 +56,39 @@
               </div>
             </div>
             <!-- _________________________________________________ -->
-             <div class="reviews">
-              <img src="./assets/icons/star.svg" alt="Bewertung">
-              <a onclick="openOverlayReviews()"><b>4.6</b> (200+)</a> 
-             </div>
+            <div class="reviews">
+              <a onclick="openOverlayReviews()"
+                ><img src="./assets/icons/star.svg" alt="Bewertung" /><b>4.6</b>
+                (200+)</a
+              >
+              <p>
+                <img
+                  src="./assets/icons/shopping.svg"
+                  alt="Mindestbestellwert"
+                />Min. 10,00€
+              </p>
+              <p>
+                <img
+                  src="./assets/icons/delivery-icon.svg"
+                  alt="Lieferkosten"
+                />
+                4,00€
+              </p>
+            </div>
           </div>
-
-          <div id="content"></div>
+          <!-- ___________________________________________________________________________________________ -->
+          <nav>
+            <a href="">Sushi</a>
+            <a href="">Dessert</a>
+            <a href="">Getränke</a>
+          </nav>
+          <!-- __________________________________________________________________________________________ -->
+          <h3>Sushi</h3>
+          <div id="content-sushi"></div>
+          <h3>Dessert</h3>
+          <div id="content-dessert"></div>
+          <h3>Getränke</h3>
+          <div id="content-drinks"></div>
         </div>
       </section>
       <!-- __________________________________________ -->
@@ -90,10 +118,14 @@
     <div id="overlay" class="overlay" onclick="closeOverlay()">
       <div class="infobox" onclick="event.stopPropagation()">
         <h2>Über uns</h2>
-        
+
         <!-- Öffnungszeiten -->
         <div class="infobox-section">
-          <img src="./assets/icons/clock-icon.svg" alt="Öffnungszeiten" class="infobox-icon" />
+          <img
+            src="./assets/icons/clock-icon.svg"
+            alt="Öffnungszeiten"
+            class="infobox-icon"
+          />
           <div>
             <h3>Öffnungszeiten</h3>
             <p>Montag - Freitag: 10:00 - 22:00</p>
@@ -103,7 +135,11 @@
 
         <!-- Lieferzeiten -->
         <div class="infobox-section">
-          <img src="./assets/icons/delivery-icon.svg" alt="Lieferzeiten" class="infobox-icon" />
+          <img
+            src="./assets/icons/delivery-icon.svg"
+            alt="Lieferzeiten"
+            class="infobox-icon"
+          />
           <div>
             <h3>Lieferzeiten</h3>
             <p>Montag - Freitag: 11:00 - 21:00</p>
@@ -113,7 +149,11 @@
 
         <!-- Mindestbestellwert -->
         <div class="infobox-section">
-          <img src="./assets/icons/euro-icon.svg" alt="Mindestbestellwert" class="infobox-icon" />
+          <img
+            src="./assets/icons/euro-icon.svg"
+            alt="Mindestbestellwert"
+            class="infobox-icon"
+          />
           <div>
             <h3>Mindestbestellwert</h3>
             <p>10,00 €</p>
@@ -122,7 +162,11 @@
 
         <!-- Bezahlmöglichkeiten -->
         <div class="infobox-section">
-          <img src="./assets/icons/payment-icon.svg" alt="Bezahlmöglichkeiten" class="infobox-icon" />
+          <img
+            src="./assets/icons/payment-icon.svg"
+            alt="Bezahlmöglichkeiten"
+            class="infobox-icon"
+          />
           <div>
             <h3>Bezahlmöglichkeiten</h3>
             <p>Barzahlung, Kreditkarte, PayPal</p>
@@ -137,13 +181,14 @@
     <div id="review-overlay" class="overlay" onclick="closeReviewOverlay()">
       <div class="infobox" onclick="event.stopPropagation()">
         <h2>Bewertungen</h2>
-        
+
         <!-- Bewertungen Liste -->
         <div id="review-list"></div>
 
-        <button class="close-button" onclick="closeReviewOverlay()">Schließen</button>
+        <button class="close-button" onclick="closeReviewOverlay()">
+          Schließen
+        </button>
       </div>
     </div>
-
   </body>
 </html>
