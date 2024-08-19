@@ -108,3 +108,4 @@ let drinks = [
     price: 5.5,
   },
 ];
+let cart = [];

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/button.css" />
     <link rel="stylesheet" href="./css/infobox.css" />
     <link rel="stylesheet" href="./css/reviews.css" />
-    <link rel="stylesheet" href="./css/sidebare.css">
+    <link rel="stylesheet" href="./css/sidebare.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -78,9 +78,9 @@
           </div>
           <!-- ___________________________________________________________________________________________ -->
           <nav>
-            <a href="">Sushi</a>
-            <a href="">Dessert</a>
-            <a href="">Getränke</a>
+            <a href="#content-sushi">Sushi</a>
+            <a href="#content-dessert">Dessert</a>
+            <a href="#content-drinks">Getränke</a>
           </nav>
           <!-- __________________________________________________________________________________________ -->
           <h3>Sushi</h3>
@@ -94,11 +94,32 @@
       <!-- __________________________________________ -->
       <section class="sidebar">
         <div class="sidebar-basket">
-          <h1>Warenkorb</h1>
+          <h2>Warenkorb</h2>
+          <h3>Lieferoptionen</h3>
+          <div id="order-type">
+            <div class="slider" onclick="toggleOrderType()">
+              <div id="pickup" class="slider-option">Abholung</div>
+              <div id="delivery" class="slider-option">Lieferung</div>
+              <div id="indicator"></div>
+            </div>
+          </div>
+          <div id="cart"></div>
+          <h2>Gesamt: <span id="total-price">0.00 €</span></h2>
+          
+
+          <button
+            id="order-button"
+            class="order-button"
+            style="display: none"
+            onclick="placeOrder()"
+          >
+            Bestellen
+          </button>
         </div>
       </section>
+      <!-- __________________________________________________________________________________________ -->
     </main>
-    <!-- __________________________________________________________________________________________ -->
+
     <footer>
       <div class="footer-links">
         <a href="#">Ein Restaurant empfehlen</a>
@@ -111,7 +132,7 @@
         <a href="#">Bug Bounty</a>
         <a href="#">Ethik-Hotline</a>
       </div>
-      <p>© 2024 Lieferapp</p>
+      <p>© 2024 Bestellapp</p>
     </footer>
 
     <!-- Overlay für die Informationen -->

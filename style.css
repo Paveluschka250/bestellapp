@@ -25,29 +25,32 @@ main {
 .title {
   display: flex;
   justify-content: space-between;
-}   
+}
 .title-infolike {
   display: flex;
 }
 .title-infolike button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .title-infolike img {
-    height: 32px;
+  height: 32px;
 }
-.infobutton, .likebutton {
+.infobutton,
+.likebutton {
   background-color: rgb(239, 237, 234);
   margin: 8px;
   border-radius: 24px;
   padding: 12px 24px; /* Optional: Fügt etwas Innenabstand hinzu */
   font-size: 16px;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease, border-radius 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    border-radius 0.3s ease;
 }
 
-.infobutton:hover, .likebutton:hover {
+.infobutton:hover,
+.likebutton:hover {
   background-color: #f36805;
   border-radius: 32px;
   transform: scale(1.1);
@@ -65,7 +68,7 @@ main {
 .reviews a:hover {
   text-decoration: underline;
 }
-nav{
+nav {
   margin: 24px 0;
   display: flex;
   gap: 16px;
@@ -78,10 +81,76 @@ nav a {
   font-size: 16px;
   font-weight: bold;
   border-radius: 32px;
-  transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease,
+    background-color 0.3s ease;
 }
 nav a:hover {
-  background-color: #f36805; 
+  background-color: #f36805;
   border-radius: 32px;
   transform: scale(1.1);
+}
+.menubox {
+  width: 100%;
+  border: #000000 solid 1px;
+  border-radius: 4px;
+  margin: 24px 0;
+  transition: background-color 0.3s ease;
+  padding: 8px;
+}
+.menubox:hover {
+  background-color: rgb(239, 237, 234);
+}
+.menubox h4 {
+  margin: 8px 0;
+}
+.shoppingcart, .order-button {
+  background: #f36805;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.shoppingcart:hover, .order-button:hover {
+  background: #80461c
+}
+#order-type {
+  margin: 20px 0;
+  display: flex;
+}
+
+.slider {
+  display: flex;
+  width: 200px;
+  height: 40px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.slider-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #333; /* Immer schwarze Schrift */
+  font-weight: bold;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#pickup {
+  border-radius: 20px 0 0 20px;
+  font-family: Raleway;
+}
+
+#delivery {
+  border-radius: 0 20px 20px 0;
+  font-family: Raleway;
+}
+
+#pickup.selected, #delivery.selected {
+  background-color: #f36805; /* Hintergrundfarbe der ausgewählten Option */
 }
