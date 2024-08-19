@@ -154,3 +154,19 @@ nav a:hover {
 #pickup.selected, #delivery.selected {
   background-color: #f36805; /* Hintergrundfarbe der ausgewählten Option */
 }
+.order-options {
+  width: 24px;
+  background-color: #f36805;
+  padding: 4px;
+  border-radius: 24px;
+  transition: background-color 0.3s ease;
+}
+.order-options:hover {
+  background-color: #80461c;
+}
+.cart-item {
+  margin-bottom: 24px;
+}
+.cart-item h4 {
+  margin: 0;
+}
