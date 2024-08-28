@@ -10,7 +10,6 @@
     z-index: 1000; /* Sicherstellen, dass das Overlay vor allem anderen liegt */
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Zusätzlicher Abstand für kleine Bildschirme */
   }
   
   /* Infobox-Stil */
