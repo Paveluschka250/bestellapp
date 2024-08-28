@@ -103,15 +103,17 @@ nav a:hover {
 .menubox h4 {
   margin: 8px 0;
 }
-.shoppingcart, .order-button {
+.shoppingcart,
+.order-button {
   background: #f36805;
   color: white;
   padding: 8px;
   border-radius: 8px;
   transition: background-color 0.3s ease;
 }
-.shoppingcart:hover, .order-button:hover {
-  background: #80461c
+.shoppingcart:hover,
+.order-button:hover {
+  background: #80461c;
 }
 #order-type {
   margin: 20px 0;
@@ -151,7 +153,8 @@ nav a:hover {
   font-family: Raleway;
 }
 
-#pickup.selected, #delivery.selected {
+#pickup.selected,
+#delivery.selected {
   background-color: #f36805; /* Hintergrundfarbe der ausgewählten Option */
 }
 .order-options {
@@ -169,4 +172,71 @@ nav a:hover {
 }
 .cart-item h4 {
   margin: 0;
+}
+.shopping-cart {
+  display: none;
+}
+h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h2 img {
+  display: none;
+  width: 32px;
+  height: 32px;
+  background-color: #f36805;
+  padding: 8px;
+  border-radius: 16px;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .sidebar {
+    display: none;
+    width: 100%;
+  }
+  .main {
+    width: 100%;
+  }
+  .shopping-cart {
+    display: block;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+  }
+  .shopping-cart img {
+    width: 40px;
+    height: 40px;
+    background-color: #f36805;
+    padding: 8px;
+    border-radius: 16px;
+    transition: background-color 0.3s ease;
+  }
+  .shopping-cart img:hover {
+    background-color: #80461c;
+  }
+  .menu {
+    margin-left: 32px;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+  }
+  h2 img {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  .shopping-cart img {
+    width: 32px;
+    height: 32px;
+  }
+  .menu {
+    margin: 4px;
+  }
+  .menubox {
+    padding: 0px;
+  }
 }

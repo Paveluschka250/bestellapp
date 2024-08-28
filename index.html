@@ -31,7 +31,7 @@
     </header>
     <!-- ___________________________________________________________________________________________ -->
     <main>
-      <section class="main">
+      <section class="main" id="main">
         <div class="homescreen">
           <img src="./assets/img/sushi-logo.jpg" alt="Sushilogo" />
         </div>
@@ -84,7 +84,7 @@
           </nav>
           <!-- __________________________________________________________________________________________ -->
           <h3>Sushi</h3>
-          <div id="content-sushi"></div>
+          <div id="content-sushi" class="content-sushi"></div>
           <h3>Dessert</h3>
           <div id="content-dessert"></div>
           <h3>Getränke</h3>
@@ -92,9 +92,9 @@
         </div>
       </section>
       <!-- __________________________________________ -->
-      <section class="sidebar">
+      <section class="sidebar" id="sidebar">
         <div class="sidebar-basket">
-          <h2>Warenkorb</h2>
+          <h2>Warenkorb <img onclick="closeShoppingcard()" src="./assets/icons/cross.svg"></h2>
           <h3>Lieferoptionen</h3>
           <h4>(Liefergebühren 5,00€)</h4>
           <div id="order-type">
@@ -212,5 +212,6 @@
         </button>
       </div>
     </div>
+    <button onclick="showShoppingCart()" class="shopping-cart" id="shopping-cart"><img src="./assets/icons/shopping-cart.svg"></button>
   </body>
 </html>

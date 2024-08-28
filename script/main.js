@@ -1,12 +1,12 @@
 let deliveryFee = 5;
-let orderType = 'pickup';
+let orderType = "pickup";
 
 function render(contentId, items) {
   let contentElement = document.getElementById(contentId);
   contentElement.innerHTML = "";
 
   for (let i = 0; i < items.length; i++) {
-      contentElement.innerHTML += /*html*/ `
+    contentElement.innerHTML += /*html*/ `
       <div class="menubox">
           <h4><strong>${items[i].name}</strong></h4>
           <p>${items[i].description}</p>
@@ -20,45 +20,48 @@ function render(contentId, items) {
 function addToCart(index, contentId) {
   let selectedItem;
   if (contentId === "content-sushi") {
-      selectedItem = mainMenu[index];
+    selectedItem = mainMenu[index];
   } else if (contentId === "content-dessert") {
-      selectedItem = desserts[index];
+    selectedItem = desserts[index];
   } else if (contentId === "content-drinks") {
-      selectedItem = drinks[index];
+    selectedItem = drinks[index];
   }
 
-  let foundItem = cart.find(item => item.name === selectedItem.name);
+  let foundItem = cart.find((item) => item.name === selectedItem.name);
   if (foundItem) {
-      foundItem.quantity += 1;
+    foundItem.quantity += 1;
   } else {
-      cart.push({ ...selectedItem, quantity: 1 });
+    cart.push({ ...selectedItem, quantity: 1 });
   }
 
   renderCart();
   calculateTotal();
-  updateOrderButtonVisibility();  // Sichtbarkeit der Bestellschaltfläche aktualisieren
+  updateOrderButtonVisibility(); // Sichtbarkeit der Bestellschaltfläche aktualisieren
 }
 
 function renderCart() {
-  let cartElement = document.getElementById('cart');
+  let cartElement = document.getElementById("cart");
   cartElement.innerHTML = "";
 
   if (cart.length === 0) {
-      cartElement.innerHTML = "<h3>Ihr Warenkorb ist leer. Fügen Sie einige Gerichte hinzu!</h3>";
+    cartElement.innerHTML =
+      "<h3>Ihr Warenkorb ist leer. Fügen Sie einige Gerichte hinzu!</h3>";
   } else {
-      cart.forEach((item, index) => {
-          cartElement.innerHTML += /*html*/ `
+    cart.forEach((item, index) => {
+      cartElement.innerHTML += /*html*/ `
           <div class="cart-item">
-              <h4>${item.name} <br> ${item.price.toFixed(2)}- € x ${item.quantity}</h4>
+              <h4>${item.name} <br> ${item.price.toFixed(2)}- € x ${
+        item.quantity
+      }</h4>
               <button onclick="decreaseQuantity(${index})"><img class="order-options" src="./assets/icons/minus.svg" alt="Minus"></button>
               <button onclick="increaseQuantity(${index})"><img class="order-options" src="./assets/icons/plus.svg" alt="Plus"></button>
               <button onclick="removeFromCart(${index})"><img class="order-options" src="./assets/icons/trash.svg" alt="Entfernen"></button>
           </div>
           `;
-      });
+    });
   }
   calculateTotal();
-  updateOrderButtonVisibility();  // Sichtbarkeit der Bestellschaltfläche aktualisieren
+  updateOrderButtonVisibility(); // Sichtbarkeit der Bestellschaltfläche aktualisieren
 }
 
 function increaseQuantity(index) {
@@ -69,9 +72,9 @@ function increaseQuantity(index) {
 
 function decreaseQuantity(index) {
   if (cart[index].quantity > 1) {
-      cart[index].quantity -= 1;
+    cart[index].quantity -= 1;
   } else {
-      cart.splice(index, 1);
+    cart.splice(index, 1);
   }
   renderCart();
   calculateTotal();
@@ -90,45 +93,45 @@ function updateOrderType(type) {
 }
 
 function updateSlider() {
-  let pickup = document.getElementById('pickup');
-  let delivery = document.getElementById('delivery');
-  
-  if (orderType === 'delivery') {
-      pickup.classList.remove('selected');
-      delivery.classList.add('selected');
+  let pickup = document.getElementById("pickup");
+  let delivery = document.getElementById("delivery");
+
+  if (orderType === "delivery") {
+    pickup.classList.remove("selected");
+    delivery.classList.add("selected");
   } else {
-      pickup.classList.add('selected');
-      delivery.classList.remove('selected');
+    pickup.classList.add("selected");
+    delivery.classList.remove("selected");
   }
 }
 
 function toggleOrderType() {
-  orderType = (orderType === 'pickup') ? 'delivery' : 'pickup';
+  orderType = orderType === "pickup" ? "delivery" : "pickup";
   updateOrderType(orderType);
 }
 
 function calculateTotal() {
   let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  if (orderType === 'delivery' && cart.length > 0) {
-      total += deliveryFee;
+  if (orderType === "delivery" && cart.length > 0) {
+    total += deliveryFee;
   }
 
-  document.getElementById('total-price').textContent = total.toFixed(2) + " €";
+  document.getElementById("total-price").textContent = total.toFixed(2) + " €";
 }
 
 function updateOrderButtonVisibility() {
-  let orderButton = document.getElementById('order-button');
+  let orderButton = document.getElementById("order-button");
   if (cart.length > 0) {
-      orderButton.style.display = 'block';
+    orderButton.style.display = "block";
   } else {
-      orderButton.style.display = 'none';
+    orderButton.style.display = "none";
   }
 }
 
 function placeOrder() {
-  alert('Ihre Bestellung wurde erfolgreich aufgegeben!');
-  cart = [];  // Warenkorb leeren
+  alert("Ihre Bestellung wurde erfolgreich aufgegeben!");
+  cart = []; // Warenkorb leeren
   renderCart();
   calculateTotal();
   updateOrderButtonVisibility();
@@ -140,6 +143,18 @@ function renderAll() {
   render("content-drinks", drinks);
   renderCart();
   calculateTotal();
-  updateOrderButtonVisibility();  // Sichtbarkeit der Bestellschaltfläche beim Laden der Seite prüfen
-  updateSlider();  // Schieberegler beim Laden der Seite einstellen
+  updateOrderButtonVisibility(); // Sichtbarkeit der Bestellschaltfläche beim Laden der Seite prüfen
+  updateSlider(); // Schieberegler beim Laden der Seite einstellen
+}
+
+function showShoppingCart() {
+  document.getElementById("sidebar").style.display = "block";
+  document.getElementById("main").style.display = "none";
+  document.getElementById("shopping-cart").style.display = "none";
+}
+
+function closeShoppingcard() {
+  document.getElementById("sidebar").style.display = "none";
+  document.getElementById("main").style.display = "block";
+  document.getElementById("shopping-cart").style.display = "block";
 }
