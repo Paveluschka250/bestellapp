@@ -1,11 +1,16 @@
 .sidebar {
-    width: 300px;
-    flex-grow: 1;
-    padding: 16px;
-    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  flex-grow: 1;
+  padding: 16px;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+}
+.sidebar-basket {
+  position: sticky;
+  top: 0;
+}
+@media (max-width: 1200px) {
+  .sidebar {
+    display: none;
+    width: 100%;
   }
-  .sidebar-basket {
-    position: sticky;
-    top: 0;
-  }
-  
+}

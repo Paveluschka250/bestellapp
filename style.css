@@ -192,10 +192,6 @@ h2 img {
 }
 
 @media (max-width: 1200px) {
-  .sidebar {
-    display: none;
-    width: 100%;
-  }
   .main {
     width: 100%;
   }

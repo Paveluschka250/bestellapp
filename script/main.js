@@ -26,14 +26,12 @@ function addToCart(index, contentId) {
   } else if (contentId === "content-drinks") {
     selectedItem = drinks[index];
   }
-
   let foundItem = cart.find((item) => item.name === selectedItem.name);
   if (foundItem) {
     foundItem.quantity += 1;
   } else {
     cart.push({ ...selectedItem, quantity: 1 });
   }
-
   renderCart();
   calculateTotal();
   updateOrderButtonVisibility(); // Sichtbarkeit der Bestellschaltfläche aktualisieren
@@ -95,7 +93,6 @@ function updateOrderType(type) {
 function updateSlider() {
   let pickup = document.getElementById("pickup");
   let delivery = document.getElementById("delivery");
-
   if (orderType === "delivery") {
     pickup.classList.remove("selected");
     delivery.classList.add("selected");
@@ -112,11 +109,9 @@ function toggleOrderType() {
 
 function calculateTotal() {
   let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
   if (orderType === "delivery" && cart.length > 0) {
     total += deliveryFee;
   }
-
   document.getElementById("total-price").textContent = total.toFixed(2) + " €";
 }
 
@@ -154,7 +149,7 @@ function showShoppingCart() {
 }
 
 function closeShoppingcard() {
-  document.getElementById("sidebar").style.display = "none";
-  document.getElementById("main").style.display = "block";
-  document.getElementById("shopping-cart").style.display = "block";
+  document.getElementById("sidebar").style.display = "";
+  document.getElementById("main").style.display = "";
+  document.getElementById("shopping-cart").style.display = "";
 }
