@@ -4,6 +4,11 @@ main {
   min-height: 0;
 }
 
+main section .open-basket,
+main aside .close-basket {
+  display: none;
+}
+
 main section {
   flex: 1;
 }
@@ -15,24 +20,49 @@ main aside {
   border-left: 1px solid #ccc;
 }
 
-#cartToggle {
-  display: none;
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background: #333;
-  color: white;
-  border: none;
-  padding: 1rem;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1000;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   main {
     flex-direction: column;
+  }
+
+  main section .open-basket,
+  main aside .close-basket {
+    display: block;
+    position: fixed;
+    background: #ff8000;
+    cursor: pointer;
+    width: 48px;
+    object-fit: cover;
+    border-radius: 16px 0 16px 16px;
+    padding: 8px;
+  }
+
+  .open-basket {
+    top: 80px;
+    right: 6px;
+  }
+
+  .close-basket {
+    top: 8px;
+    right: 8px;
   }
 
   main aside {
@@ -50,9 +80,5 @@ main aside {
 
   main aside#cart.open {
     transform: translateX(0);
-  }
-
-  #cartToggle {
-    display: block;
   }
 }

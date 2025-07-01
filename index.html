@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="stylesheet" href="./css/header-footer.css" />
     <link rel="stylesheet" href="./css/standard.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./assets/icons/favicon.ico" />
@@ -11,15 +11,31 @@
   </head>
   <body>
     <header>
-      <a href="./index.html"><img src="./assets/img/logo/logo.png" alt="logo" /></a>
+      <a href="./index.html"
+        ><img src="./assets/img/logo/logo.png" alt="logo"
+      /></a>
     </header>
 
     <main>
       <section>
-        <p>Hier stehen die Produkte...</p>
+        <h2>section</h2>
+        <img
+          class="open-basket"
+          onclick="openBasket()"
+          src="./assets/icons/open-basket.svg"
+          alt=""
+        />
       </section>
+
       <aside id="cart">
-        <h2>Warenkorb</h2>
+        <h2>aside</h2>
+          <img
+            class="close-basket"
+            src="./assets/icons/close-basket.svg"
+            alt=""
+            onclick="closeBasket()"
+          />
+        </div>
       </aside>
     </main>
 
@@ -27,8 +43,6 @@
       <a href="./pages/impressum.html">Impressum</a>|
       <a href="./pages/privacy-policy.html">Datenschutz </a>
     </footer>
-
-    <button id="cartToggle" onclick="openBasket()">🛒</button>
   </body>
 
   <script src="./js/script.js"></script>
