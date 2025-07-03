@@ -10,43 +10,37 @@ function renderMain() {
   }
 }
 
-function createMainContainer(index) {
-  let restaurant = sushiRestaurant[index];
-  return /*html*/ `
+function renderNavigation(menu) {
+  let categories = Object.keys(menu);
+  let html = "";
+  for (let i = 0; i < categories.length; i++) {
+    html += createNavigation(categories[i]);
+  }
+  return html;
+}
 
-  <header style="background: url('${restaurant.cover}')">
-    <img src="${restaurant.logo}" alt="logo">
-  </header>
+function renderMenuInfo(dishes) {
+  let html = "";
+  for (let i = 0; i < dishes.length; i++) {
+    html += createMenuInfo(dishes[i]);
+  }
+  return html;
+}
 
-  <main>
-    <section class="main-header">
-      <h2>${restaurant.name}</h2>
-      <button><img src="assets/icons/info.svg" alt="info"> Über uns</button>
-    </section>
 
-    <section class="restaurant-meta">
-      <div class="meta-item">
-        <img src="assets/icons/star.svg" alt="reviews" />
-        <span class="rating-text">${restaurant.rating} (${restaurant.reviewsCount }+)</span>
-      </div>
-      <div class="dot-separator">•</div>
-      <div class="meta-item">
-        <img src="assets/icons/shopping-card.svg" alt="Min. Bestellwert" />
-        <span>Min. ${restaurant.minOrder.toFixed(2)} €</span>
-      </div>
-      <div class="dot-separator">•</div>
-      <div class="meta-item">
-        <img src="assets/icons/delivery.svg" alt="Lieferkosten" />
-        <span>${restaurant.deliveryFee.toFixed(2)} €</span>
-      </div>
-      <div class="dot-separator">•</div>
-      <div class="meta-item">
-        <img src="assets/icons/info.svg" alt="info" />
-      </div>
-    </section>
-    
-  </main>
-  `;
+function formatCategoryName(name) {
+  return name.charAt(0).toUpperCase() + name.slice(1);
+}
+
+function renderMenu(menu) {
+  let categories = Object.keys(menu);
+  let html = "";
+  for (let i = 0; i < categories.length; i++) {
+    let categoryName = categories[i];
+    let dishes = menu[categoryName];
+    html += createMenu(categoryName, dishes);
+  }
+  return html;
 }
 
 function openBasket() {
