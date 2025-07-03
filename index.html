@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/header-footer.css" />
+    <link rel="stylesheet" href="./css/templates.css">
     <link rel="stylesheet" href="./css/standard.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./assets/icons/favicon.ico" />
@@ -18,24 +19,22 @@
 
     <main>
       <section>
-        <h2>section</h2>
         <img
           class="open-basket"
           onclick="openBasket()"
           src="./assets/icons/open-basket.svg"
           alt=""
         />
+        <div class="main-container" id="main-container"></div>
       </section>
 
       <aside id="cart">
-        <h2>aside</h2>
-          <img
-            class="close-basket"
-            src="./assets/icons/close-basket.svg"
-            alt=""
-            onclick="closeBasket()"
-          />
-        </div>
+        <img
+          class="close-basket"
+          src="./assets/icons/close-basket.svg"
+          alt=""
+          onclick="closeBasket()"
+        />
       </aside>
     </main>
 
@@ -44,7 +43,8 @@
       <a href="./pages/privacy-policy.html">Datenschutz </a>
     </footer>
   </body>
-
+  <script src="./js/data.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/templates.js"></script>
+
 </html>

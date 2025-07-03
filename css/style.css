@@ -20,24 +20,6 @@ main aside {
   border-left: 1px solid #ccc;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 768px) {
   main {
     flex-direction: column;

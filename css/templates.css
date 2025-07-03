@@ -1,0 +1,80 @@
+.main-container header {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.main-container header img {
+  width: 100px;
+  border-radius: 8px;
+  position: absolute;
+  left: 100px;
+  bottom: 16px;
+}
+
+.main-container main {
+  padding: 24px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container main .main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-container main .main-header h1 {
+}
+
+.main-container main .main-header button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e6e1dc;
+  border: none;
+  border-radius: 32px;
+  padding: 16px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.main-container main .main-header button:hover {
+  background-color: #cfcac4;
+}
+
+.main-container main .main-header button img {
+  width: 20px;
+}
+
+.main-container main .restaurant-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #333;
+  flex-wrap: wrap;
+}
+
+.main-container main .restaurant-meta .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.main-container main .restaurant-meta img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.main-container main .dot-separator {
+  color: #666;
+  font-size: 18px;
+  line-height: 1;
+  margin: 0 4px;
+}
+
