@@ -1,0 +1,62 @@
+header {
+  width: 100%;
+  background: #ff8000;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+header a {
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+header a img {
+  width: 100px;
+}
+
+header a:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+footer {
+  width: 100%;
+  background: #ff8000;
+  color: white;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+
+footer a:hover {
+  color: #ffe0cc; 
+}
+
+
+footer a:hover::after {
+  width: 100%;
+}

@@ -3,88 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LieferApp</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" href="./assets/icons/favicon.ico" />
+
     <link rel="stylesheet" href="./css/standart.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/header-footer.css" />
     <link rel="stylesheet" href="./css/button.css" />
     <link rel="stylesheet" href="./css/infobox.css" />
     <link rel="stylesheet" href="./css/reviews.css" />
     <link rel="stylesheet" href="./css/sidebare.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="./script/main.js"></script>
-    <script src="./script/info.js"></script>
-    <script src="./script/like.js"></script>
-    <script src="./script/reviews.js"></script>
-    <script src="./script/data.js"></script>
+    <link rel="icon" href="./assets/icons/favicon.ico" />
+    <title>Bestellapp</title>
   </head>
   <body onload="renderAll()">
     <header>
-      <img src="./assets/icons/Bestell App- Logo.svg" alt="Logo" />
+      <a href="./index.html"
+        ><img src="./assets/img/logo/logo.png" alt="logo"
+      /></a>
     </header>
-    <!-- ___________________________________________________________________________________________ -->
+
     <main>
       <section class="main" id="main">
-        <div class="homescreen">
-          <img src="./assets/img/sushi-logo.jpg" alt="Sushilogo" />
+        <div class="cover">
+          <img src="./assets/img/logo/restaurant-logo.png" alt="Sushilogo" />
         </div>
 
-        <div class="menu">
-          <div>
-            <div class="title">
-              <h1>Sushi Restaurant</h1>
-              <div class="title-infolike">
-                <button class="infobutton" onclick="openOverlayInfo()">
-                  <img src="./assets/icons/info-icon.svg" alt="Info" /><b
-                    >Über uns</b
-                  >
-                </button>
-                <button class="likebutton" onclick="toggleLike()">
-                  <img
-                    id="like-icon"
-                    src="./assets/icons/like-false.svg"
-                    alt="Like"
-                  />
-                </button>
-              </div>
-            </div>
-            <!-- _________________________________________________ -->
-            <div class="reviews">
-              <a onclick="openOverlayReviews()"
-                ><img src="./assets/icons/star.svg" alt="Bewertung" /><b>4.6</b>
-                (200+)</a
-              >
-              <p>
-                <img
-                  src="./assets/icons/shopping.svg"
-                  alt="Mindestbestellwert"
-                />Min. 10,00€
-              </p>
-              <p>
-                <img
-                  src="./assets/icons/delivery-icon.svg"
-                  alt="Lieferkosten"
-                />
-                4,00€
-              </p>
-            </div>
+        <div class="main-header">
+          <h2>Sushi Palace</h2>
+          <div class="main-header-right">
+            <button onclick="toggleLike()">
+              <img
+                id="like-icon"
+                src="./assets/icons/like-false.svg"
+                alt="Like"
+              />
+            </button>
+            <button onclick="openOverlayInfo()">
+              <img src="assets/icons/info.svg" alt="info" /> Über uns
+            </button>
           </div>
-          <!-- ___________________________________________________________________________________________ -->
-          <nav>
-            <a href="#content-sushi">Sushi</a>
-            <a href="#content-dessert">Dessert</a>
-            <a href="#content-drinks">Getränke</a>
-          </nav>
-          <!-- __________________________________________________________________________________________ -->
+        </div>
+
+        <div class="restaurant-meta">
+          <div class="meta-item">
+            <img src="assets/icons/star.svg" alt="reviews" />
+            <span class="rating-text">4.6 (532)</span>
+          </div>
+
+          <div class="dot-separator">•</div>
+
+          <div class="meta-item">
+            <img src="assets/icons/shopping-card.svg" alt="Min. Bestellwert" />
+            <span>Min. 15.00 €</span>
+          </div>
+
+          <div class="dot-separator">•</div>
+
+          <div class="meta-item">
+            <img src="assets/icons/delivery.svg" alt="Lieferkosten" />
+            <span>5.00 €</span>
+          </div>
+
+          <div class="dot-separator">•</div>
+
+          <div class="meta-item" onclick="openOverlayInfo()">
+            <img src="assets/icons/info.svg" alt="info" />
+          </div>
+        </div>
+
+        <nav>
+          <a href="#content-sushi">Sushi</a>
+          <a href="#content-dessert">Dessert</a>
+          <a href="#content-drinks">Getränke</a>
+        </nav>
+
+        <div class="menu">
           <h3>Sushi</h3>
-          <div id="content-sushi" class="content-sushi"></div>
+          <div id="content-sushi"></div>
           <h3>Dessert</h3>
           <div id="content-dessert"></div>
           <h3>Getränke</h3>
@@ -94,7 +88,10 @@
       <!-- __________________________________________ -->
       <section class="sidebar" id="sidebar">
         <div class="sidebar-basket">
-          <h2>Warenkorb <img onclick="closeShoppingcard()" src="./assets/icons/cross.svg"></h2>
+          <h2>
+            Warenkorb
+            <img onclick="closeShoppingcard()" src="./assets/icons/cross.svg" />
+          </h2>
           <h3>Lieferoptionen</h3>
           <h4>(Liefergebühren 5,00€)</h4>
           <div id="order-type">
@@ -106,7 +103,6 @@
           </div>
           <div id="cart"></div>
           <h2>Gesamt: <span id="total-price">0.00 €</span></h2>
-          
 
           <button
             id="order-button"
@@ -122,18 +118,8 @@
     </main>
 
     <footer>
-      <div class="footer-links">
-        <a href="#">Ein Restaurant empfehlen</a>
-        <a href="#">Ein Restaurant anmelden</a>
-        <a href="#">Jobs</a>
-        <a href="#">AGB</a>
-        <a href="#">Datenschutzerklärung</a>
-        <a href="#">Impressum</a>
-        <a href="#">Verwendung von Cookies</a>
-        <a href="#">Bug Bounty</a>
-        <a href="#">Ethik-Hotline</a>
-      </div>
-      <p>© 2024 Bestellapp</p>
+      <a href="./pages/impressum.html">Impressum</a>|
+      <a href="./pages/privacy-policy.html">Datenschutz </a>
     </footer>
 
     <!-- Overlay für die Informationen -->
@@ -212,6 +198,18 @@
         </button>
       </div>
     </div>
-    <button onclick="showShoppingCart()" class="shopping-cart" id="shopping-cart"><img src="./assets/icons/shopping-cart.svg"></button>
+    <button
+      onclick="showShoppingCart()"
+      class="shopping-cart"
+      id="shopping-cart"
+    >
+      <img src="./assets/icons/shopping-cart.svg" />
+    </button>
+
+    <script src="./script/main.js"></script>
+    <script src="./script/info.js"></script>
+    <script src="./script/like.js"></script>
+    <script src="./script/reviews.js"></script>
+    <script src="./script/data.js"></script>
   </body>
 </html>

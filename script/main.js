@@ -10,7 +10,7 @@ function render(contentId, items) {
       <div class="menubox">
           <h4><strong>${items[i].name}</strong></h4>
           <p>${items[i].description}</p>
-          <h4>${items[i].price.toFixed(2)} €</h4>
+          <p>${items[i].price.toFixed(2)} €</p>
           <button class="shoppingcart" onclick="addToCart(${i}, '${contentId}')">In den Warenkorb</button>
       </div>
       `;
@@ -126,7 +126,7 @@ function updateOrderButtonVisibility() {
 
 function placeOrder() {
   alert("Ihre Bestellung wurde erfolgreich aufgegeben!");
-  cart = []; // Warenkorb leeren
+  cart = [];
   renderCart();
   calculateTotal();
   updateOrderButtonVisibility();
@@ -138,8 +138,8 @@ function renderAll() {
   render("content-drinks", drinks);
   renderCart();
   calculateTotal();
-  updateOrderButtonVisibility(); // Sichtbarkeit der Bestellschaltfläche beim Laden der Seite prüfen
-  updateSlider(); // Schieberegler beim Laden der Seite einstellen
+  updateOrderButtonVisibility();
+  updateSlider();
 }
 
 function showShoppingCart() {
