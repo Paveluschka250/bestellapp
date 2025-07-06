@@ -16,27 +16,34 @@ main {
   width: 100px;
   position: relative;
   top: 380px;
-  left: 200px;
+  left: 5%;
   border: 2px #000000 solid;
   border-radius: 8px;
 }
 
-.main .main-header {
+.main .main-content {
+  margin: 2% 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main .main-content .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.main .main-header h1 {
+.main .main-content .main-header h1 {
 }
 
-.main .main-header .main-header-right {
+.main .main-content .main-header .main-header-right {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.main .main-header .main-header-right button {
+.main .main-content .main-header .main-header-right button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -48,11 +55,11 @@ main {
   cursor: pointer;
 }
 
-.main .main-header .main-header-right button:hover {
+.main .main-content .main-header .main-header-right button:hover {
   background-color: #cfcac4;
 }
 
-.main .main-header .main-header-right button img {
+.main .main-content .main-header .main-header-right button img {
   width: 20px;
 }
 
@@ -64,7 +71,7 @@ main {
   transform: scale(1.3);
 }
 
-.main .restaurant-meta {
+.main .main-content .restaurant-meta {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -73,44 +80,44 @@ main {
   flex-wrap: wrap;
 }
 
-.main .restaurant-meta .meta-item {
+.main .main-content .restaurant-meta .meta-item {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-.main .restaurant-meta .meta-item .rating-text {
+.main .main-content .restaurant-meta .meta-item .rating-text {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.main .restaurant-meta .meta-item .rating-text:hover {
+.main .main-content .restaurant-meta .meta-item .rating-text:hover {
   text-decoration: none;
 }
 
-.main .restaurant-meta img {
+.main .main-content .restaurant-meta img {
   width: 16px;
   height: 16px;
   object-fit: contain;
 }
 
-.main .restaurant-meta .meta-item:last-child {
+.main .main-content .restaurant-meta .meta-item:last-child {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
-.main .restaurant-meta .meta-item:last-child:hover {
+.main .main-content .restaurant-meta .meta-item:last-child:hover {
   transform: scale(1.2);
 }
 
-.main .dot-separator {
+.main .main-content .dot-separator {
   color: #666;
   font-size: 18px;
   line-height: 1;
   margin: 0 4px;
 }
 
-.main nav a {
+.main .main-content nav a {
   display: inline-block;
   margin-right: 12px;
   text-decoration: none;
@@ -121,21 +128,26 @@ main {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.main nav a:hover {
+.main .main-content nav a:hover {
   background-color: #f0f0f0;
 }
 
-.main .menu {
+.main .main-content .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.main .menu h3 {
-  margin-top: 80px;
+.main .main-content .menu .category {
 }
 
-.main .menu div {
+.main .main-content .menu h3 {
 }
 
-.main .menu div .menubox {
+.main .main-content .menu div {
+}
+
+.main .main-content .menu div .menubox {
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   margin-bottom: 16px;
@@ -147,50 +159,18 @@ main {
     transform 0.3s ease;
 }
 
-.main .menu div .menubox:hover {
+.main .main-content .menu div .menubox:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   background-color: #f7f7f7;
   transform: translateY(-2px);
 }
 
-.main .menu div .menubox h4 {
+.main .main-content .menu div .menubox h4 {
   margin: 0 0 4px 0;
 }
 
-.main .menu div .menubox p {
+.main .main-content .menu div .menubox p {
   margin: 4px 0;
-}
-
-.infobutton,
-.likebutton {
-  background-color: rgb(239, 237, 234);
-  margin: 8px;
-  border-radius: 24px;
-  padding: 12px 24px; /* Optional: Fügt etwas Innenabstand hinzu */
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    border-radius 0.3s ease;
-}
-
-.infobutton:hover,
-.likebutton:hover {
-  background-color: #f36805;
-  border-radius: 32px;
-  transform: scale(1.1);
-}
-.reviews {
-  display: flex;
-  gap: 16px;
-}
-.reviews img {
-  width: 20px;
-}
-.reviews a {
-  cursor: pointer;
-}
-.reviews a:hover {
-  text-decoration: underline;
 }
 
 .shoppingcart,
@@ -227,7 +207,7 @@ main {
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: #333; /* Immer schwarze Schrift */
+  color: #333;
   font-weight: bold;
   border-radius: 20px;
   transition: background-color 0.3s ease;
@@ -235,12 +215,10 @@ main {
 
 #pickup {
   border-radius: 20px 0 0 20px;
-  font-family: Raleway;
 }
 
 #delivery {
   border-radius: 0 20px 20px 0;
-  font-family: Raleway;
 }
 
 #pickup.selected,

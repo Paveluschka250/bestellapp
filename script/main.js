@@ -142,7 +142,7 @@ function renderAll() {
   updateSlider();
 }
 
-function showShoppingCart() {
+function openShoppingCart() {
   document.getElementById("sidebar").style.display = "block";
   document.getElementById("main").style.display = "none";
   document.getElementById("shopping-cart").style.display = "none";

@@ -27,66 +27,77 @@
           <img src="./assets/img/logo/restaurant-logo.png" alt="Sushilogo" />
         </div>
 
-        <div class="main-header">
-          <h2>Sushi Palace</h2>
-          <div class="main-header-right">
-            <button onclick="toggleLike()">
+        <div class="main-content">
+          <div class="main-header">
+            <h2>Sushi Palace</h2>
+            <div class="main-header-right">
+              <button onclick="toggleLike()">
+                <img
+                  id="like-icon"
+                  src="./assets/icons/like-false.svg"
+                  alt="Like"
+                />
+              </button>
+              <button onclick="openOverlayInfo()">
+                <img src="assets/icons/info.svg" alt="info" /> Über uns
+              </button>
+            </div>
+          </div>
+
+          <div class="restaurant-meta">
+            <div class="meta-item" onclick="openOverlayReviews()">
+              <img src="assets/icons/star.svg" alt="reviews" />
+              <span class="rating-text">4.6 (532)</span>
+            </div>
+
+            <div class="dot-separator">•</div>
+
+            <div class="meta-item">
               <img
-                id="like-icon"
-                src="./assets/icons/like-false.svg"
-                alt="Like"
+                src="assets/icons/shopping-card.svg"
+                alt="Min. Bestellwert"
               />
-            </button>
-            <button onclick="openOverlayInfo()">
-              <img src="assets/icons/info.svg" alt="info" /> Über uns
-            </button>
-          </div>
-        </div>
+              <span>Min. 15.00 €</span>
+            </div>
 
-        <div class="restaurant-meta">
-          <div class="meta-item">
-            <img src="assets/icons/star.svg" alt="reviews" />
-            <span class="rating-text">4.6 (532)</span>
-          </div>
+            <div class="dot-separator">•</div>
 
-          <div class="dot-separator">•</div>
+            <div class="meta-item">
+              <img src="assets/icons/delivery.svg" alt="Lieferkosten" />
+              <span>5.00 €</span>
+            </div>
 
-          <div class="meta-item">
-            <img src="assets/icons/shopping-card.svg" alt="Min. Bestellwert" />
-            <span>Min. 15.00 €</span>
+            <div class="dot-separator">•</div>
+
+            <div class="meta-item" onclick="openOverlayInfo()">
+              <img src="assets/icons/info.svg" alt="info" />
+            </div>
           </div>
 
-          <div class="dot-separator">•</div>
+          <nav>
+            <a href="#content-sushi">Sushi</a>
+            <a href="#content-dessert">Dessert</a>
+            <a href="#content-drinks">Getränke</a>
+          </nav>
 
-          <div class="meta-item">
-            <img src="assets/icons/delivery.svg" alt="Lieferkosten" />
-            <span>5.00 €</span>
+          <div class="menu">
+            <div class="category">
+              <h3>Sushi</h3>
+              <div id="content-sushi"></div>
+            </div>
+            <div class="category">
+              <h3>Dessert</h3>
+              <div id="content-dessert"></div>
+            </div>
+            <div class="category">
+              <h3>Getränke</h3>
+              <div id="content-drinks"></div>
+            </div>
           </div>
-
-          <div class="dot-separator">•</div>
-
-          <div class="meta-item" onclick="openOverlayInfo()">
-            <img src="assets/icons/info.svg" alt="info" />
-          </div>
-        </div>
-
-        <nav>
-          <a href="#content-sushi">Sushi</a>
-          <a href="#content-dessert">Dessert</a>
-          <a href="#content-drinks">Getränke</a>
-        </nav>
-
-        <div class="menu">
-          <h3>Sushi</h3>
-          <div id="content-sushi"></div>
-          <h3>Dessert</h3>
-          <div id="content-dessert"></div>
-          <h3>Getränke</h3>
-          <div id="content-drinks"></div>
         </div>
       </section>
-      <!-- __________________________________________ -->
-      <section class="sidebar" id="sidebar">
+
+      <aside class="sidebar" id="sidebar">
         <div class="sidebar-basket">
           <h2>
             Warenkorb
@@ -113,8 +124,7 @@
             Bestellen
           </button>
         </div>
-      </section>
-      <!-- __________________________________________________________________________________________ -->
+      </aside>
     </main>
 
     <footer>
@@ -122,12 +132,19 @@
       <a href="./pages/privacy-policy.html">Datenschutz </a>
     </footer>
 
+    <button
+      onclick="openShoppingCart()"
+      class="shopping-cart"
+      id="shopping-cart"
+    >
+      <img src="./assets/icons/open-basket.svg" />
+    </button>
+
     <!-- Overlay für die Informationen -->
     <div id="overlay" class="overlay" onclick="closeOverlay()">
       <div class="infobox" onclick="event.stopPropagation()">
         <h2>Über uns</h2>
 
-        <!-- Öffnungszeiten -->
         <div class="infobox-section">
           <img
             src="./assets/icons/clock-icon.svg"
@@ -141,7 +158,6 @@
           </div>
         </div>
 
-        <!-- Lieferzeiten -->
         <div class="infobox-section">
           <img
             src="./assets/icons/delivery-icon.svg"
@@ -155,7 +171,6 @@
           </div>
         </div>
 
-        <!-- Mindestbestellwert -->
         <div class="infobox-section">
           <img
             src="./assets/icons/euro-icon.svg"
@@ -168,7 +183,6 @@
           </div>
         </div>
 
-        <!-- Bezahlmöglichkeiten -->
         <div class="infobox-section">
           <img
             src="./assets/icons/payment-icon.svg"
@@ -185,12 +199,10 @@
       </div>
     </div>
 
-    <!-- Overlay für Bewertungen -->
     <div id="review-overlay" class="overlay" onclick="closeReviewOverlay()">
       <div class="infobox" onclick="event.stopPropagation()">
         <h2>Bewertungen</h2>
 
-        <!-- Bewertungen Liste -->
         <div id="review-list"></div>
 
         <button class="close-button" onclick="closeReviewOverlay()">
@@ -198,13 +210,6 @@
         </button>
       </div>
     </div>
-    <button
-      onclick="showShoppingCart()"
-      class="shopping-cart"
-      id="shopping-cart"
-    >
-      <img src="./assets/icons/shopping-cart.svg" />
-    </button>
 
     <script src="./script/main.js"></script>
     <script src="./script/info.js"></script>
