@@ -123,14 +123,8 @@
   gap: 6px;
 }
 
-.sidebar .sidebar-basket #cart .cart-item-actions .quantity-button,
-.sidebar .sidebar-basket #cart .cart-item-actions .remove-button {
-  border: none;
+.sidebar .sidebar-basket #cart .cart-item-actions button {
   padding: 6px;
-  background: #f36805;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.1s ease;
 }
 
 .sidebar .sidebar-basket #cart .cart-item-actions .quantity-button:hover,

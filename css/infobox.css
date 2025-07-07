@@ -1,29 +1,26 @@
-/* Overlay-Stil */
 .overlay {
-    display: none; /* Das Overlay ist standardmäßig ausgeblendet */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
-    z-index: 1000; /* Sicherstellen, dass das Overlay vor allem anderen liegt */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000; 
     justify-content: center;
     align-items: center;
   }
   
-  /* Infobox-Stil */
   .infobox {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
     max-width: 500px;
     width: 100%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Leichter Schatten für Tiefe */
-    font-family: 'Raleway', sans-serif; /* Angenehme, moderne Schrift */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+    font-family: 'Raleway', sans-serif; 
   }
   
-  /* Infobox Überschriften */
   .infobox h2 {
     text-align: center;
     color: #333;
@@ -37,13 +34,11 @@
     font-size: 18px;
   }
   
-  /* Infobox Inhalt */
   .infobox p {
     margin: 0;
     color: #555;
   }
   
-  /* Abschnitts-Stil */
   .infobox-section {
     display: flex;
     align-items: center;
@@ -56,7 +51,6 @@
     margin-right: 15px;
   }
   
-  /* Schließen-Button */
   .close-button {
     display: block;
     width: 100%;

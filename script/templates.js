@@ -18,14 +18,14 @@ function createCartItem(item, index) {
         <p>${item.price.toFixed(2)} €</p>
       </div>
       <div class="cart-item-actions">
-        <button onclick="decreaseQuantity(${index})" class="quantity-button">
+        <button onclick="decreaseQuantity(${index})">
           <img src="./assets/icons/left.svg" alt="Weniger">
         </button>
         <span class="quantity-display">${item.quantity}</span>
-        <button onclick="increaseQuantity(${index})" class="quantity-button">
+        <button onclick="increaseQuantity(${index})">
           <img src="./assets/icons/right.svg" alt="Mehr">
         </button>
-        <button onclick="removeFromCart(${index})" class="remove-button">
+        <button onclick="removeFromCart(${index})">
           <img src="./assets/icons/delete.svg" alt="Entfernen">
         </button>
       </div>
