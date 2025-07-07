@@ -99,10 +99,7 @@
 
       <aside class="sidebar" id="sidebar">
         <div class="sidebar-basket">
-          <h2>
-            Warenkorb
-            <img onclick="closeShoppingcard()" src="./assets/icons/cross.svg" />
-          </h2>
+          <h2>Warenkorb</h2>
           <h3>Lieferoptionen</h3>
           <h4>(Liefergebühren 5,00€)</h4>
           <div id="order-type">
@@ -124,6 +121,7 @@
             Bestellen
           </button>
         </div>
+        <img class="shopping-cart" onclick="closeShoppingcard()" src="./assets/icons/close-basket.svg" />
       </aside>
     </main>
 
@@ -132,13 +130,7 @@
       <a href="./pages/privacy-policy.html">Datenschutz </a>
     </footer>
 
-    <button
-      onclick="openShoppingCart()"
-      class="shopping-cart"
-      id="shopping-cart"
-    >
-      <img src="./assets/icons/open-basket.svg" />
-    </button>
+    <img class="shopping-cart" onclick="openShoppingCart()" src="./assets/icons/open-basket.svg" />
 
     <!-- Overlay für die Informationen -->
     <div id="overlay" class="overlay" onclick="closeOverlay()">

@@ -48,9 +48,7 @@ function renderCart() {
     cart.forEach((item, index) => {
       cartElement.innerHTML += /*html*/ `
           <div class="cart-item">
-              <h4>${item.name} <br> ${item.price.toFixed(2)}- € x ${
-        item.quantity
-      }</h4>
+              <h4>${item.name} <br> ${item.price.toFixed(2)}- € x ${item.quantity}</h4>
               <button onclick="decreaseQuantity(${index})"><img class="order-options" src="./assets/icons/minus.svg" alt="Minus"></button>
               <button onclick="increaseQuantity(${index})"><img class="order-options" src="./assets/icons/plus.svg" alt="Plus"></button>
               <button onclick="removeFromCart(${index})"><img class="order-options" src="./assets/icons/trash.svg" alt="Entfernen"></button>
