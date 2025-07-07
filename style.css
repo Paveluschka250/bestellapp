@@ -48,6 +48,7 @@ main {
   align-items: center;
   gap: 8px;
   background-color: #e6e1dc;
+  color: #000000;
   border: none;
   border-radius: 32px;
   padding: 16px;
@@ -121,15 +122,20 @@ main {
   display: inline-block;
   margin-right: 12px;
   text-decoration: none;
-  color: #333;
+  background-color: #ff8000;
+  color: #fff;
   font-weight: 500;
   padding: 8px 16px;
-  border-radius: 999px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: 999px; /* Pillenform */
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .main .main-content nav a:hover {
-  background-color: #f0f0f0;
+  background-color: #e67300; /* dunkler beim Hover */
+}
+
+.main .main-content nav a:active {
+  transform: scale(0.97);
 }
 
 .main .main-content .menu {

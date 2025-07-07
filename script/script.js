@@ -6,14 +6,7 @@ function render(contentId, items) {
   contentElement.innerHTML = "";
 
   for (let i = 0; i < items.length; i++) {
-    contentElement.innerHTML += /*html*/ `
-      <div class="menubox">
-          <h4><strong>${items[i].name}</strong></h4>
-          <p>${items[i].description}</p>
-          <p>${items[i].price.toFixed(2)} €</p>
-          <button class="shoppingcart" onclick="addToCart(${i}, '${contentId}')">In den Warenkorb</button>
-      </div>
-      `;
+    contentElement.innerHTML += createMenuBox(items[i], i, contentId);
   }
 }
 
@@ -34,7 +27,7 @@ function addToCart(index, contentId) {
   }
   renderCart();
   calculateTotal();
-  updateOrderButtonVisibility(); // Sichtbarkeit der Bestellschaltfläche aktualisieren
+  updateOrderButtonVisibility();
 }
 
 function renderCart() {
@@ -42,22 +35,18 @@ function renderCart() {
   cartElement.innerHTML = "";
 
   if (cart.length === 0) {
-    cartElement.innerHTML =
-      "<h3>Ihr Warenkorb ist leer. Fügen Sie einige Gerichte hinzu!</h3>";
+    cartElement.innerHTML = /*html*/`
+        <div class="cart-empty">
+          <p>🛒 Ihr Warenkorb ist leer.<br>Fügen Sie einige Gerichte hinzu!</p>
+        </div>
+      `     
   } else {
     cart.forEach((item, index) => {
-      cartElement.innerHTML += /*html*/ `
-          <div class="cart-item">
-              <h4>${item.name} <br> ${item.price.toFixed(2)}- € x ${item.quantity}</h4>
-              <button onclick="decreaseQuantity(${index})"><img class="order-options" src="./assets/icons/minus.svg" alt="Minus"></button>
-              <button onclick="increaseQuantity(${index})"><img class="order-options" src="./assets/icons/plus.svg" alt="Plus"></button>
-              <button onclick="removeFromCart(${index})"><img class="order-options" src="./assets/icons/trash.svg" alt="Entfernen"></button>
-          </div>
-          `;
+      cartElement.innerHTML += createCartItem(item, index);
     });
   }
   calculateTotal();
-  updateOrderButtonVisibility(); // Sichtbarkeit der Bestellschaltfläche aktualisieren
+  updateOrderButtonVisibility();
 }
 
 function increaseQuantity(index) {
