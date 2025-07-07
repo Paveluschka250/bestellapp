@@ -35,11 +35,11 @@ function renderCart() {
   cartElement.innerHTML = "";
 
   if (cart.length === 0) {
-    cartElement.innerHTML = /*html*/`
+    cartElement.innerHTML = /*html*/ `
         <div class="cart-empty">
           <p>🛒 Ihr Warenkorb ist leer.<br>Fügen Sie einige Gerichte hinzu!</p>
         </div>
-      `     
+      `;
   } else {
     cart.forEach((item, index) => {
       cartElement.innerHTML += createCartItem(item, index);
@@ -139,4 +139,60 @@ function closeShoppingcard() {
   document.getElementById("sidebar").style.display = "";
   document.getElementById("main").style.display = "";
   document.getElementById("shopping-cart").style.display = "";
+}
+
+function openOverlayInfo() {
+  document.getElementById("overlay").style.display = "flex";
+}
+
+function closeOverlay() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+function openOverlayReviews() {
+  let reviewList = document.getElementById("review-list");
+  reviewList.innerHTML = "";
+
+  reviews.forEach((review) => {
+    const reviewItem = document.createElement("div");
+    reviewItem.classList.add("review-item");
+
+    reviewItem.innerHTML = `
+        <h3>${review.name}</h3>
+        <p><em>${review.date}</em></p>
+        <p>${review.review}</p>
+      `;
+
+    reviewList.appendChild(reviewItem);
+  });
+
+  document.getElementById("review-overlay").style.display = "flex";
+}
+
+function closeReviewOverlay() {
+  document.getElementById("review-overlay").style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  let img = document.getElementById("like-icon");
+  let saved = localStorage.getItem("liked") === "true";
+  img.src = saved
+    ? "./assets/icons/like-true.svg"
+    : "./assets/icons/like-false.svg";
+});
+
+function toggleLike() {
+  let img = document.getElementById("like-icon");
+  let liked = img.src.includes("like-true.svg");
+  let newState = !liked;
+
+  img.src = newState
+    ? "./assets/icons/like-true.svg"
+    : "./assets/icons/like-false.svg";
+  localStorage.setItem("liked", newState);
+
+  img.classList.add("clicked");
+  setTimeout(() => {
+    img.classList.remove("clicked");
+  }, 200);
 }

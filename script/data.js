@@ -108,4 +108,23 @@ let drinks = [
     price: 5.5,
   },
 ];
+
 let cart = [];
+
+let reviews = [
+  {
+    name: "Anna",
+    date: "12.08.2024",
+    review: "Tolles Sushi! Sehr frisch und lecker.",
+  },
+  {
+    name: "Markus",
+    date: "10.08.2024",
+    review: "Guter Service, aber das Essen war nur okay.",
+  },
+  {
+    name: "Sophia",
+    date: "08.08.2024",
+    review: "Fantastische Erfahrung, kann es nur empfehlen!",
+  },
+];

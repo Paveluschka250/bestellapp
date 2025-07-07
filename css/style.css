@@ -9,7 +9,7 @@ main {
 }
 
 .main .cover {
-  background: url(./assets/img/picture/cover.jpg) no-repeat center/cover;
+  background: url(../assets/img/picture/cover.jpg) no-repeat center/cover;
   height: 500px;
 }
 .main .cover img {
